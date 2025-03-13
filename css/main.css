@@ -1,0 +1,216 @@
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: black;
+    font-family: Lato;
+}
+
+h1 {
+    font-family: Playfair Display;
+}
+
+h1, h2, p, ul, footer {
+    color: white
+}
+
+h2 {
+    margin: 30px 0px 30px 0px;
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.planets {
+    display: flex;
+    gap: 20px;
+    
+}
+
+footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    text-align: center; 
+    position: relative; 
+    margin-top: 100px;
+}
+
+.planet-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 20px;
+}
+
+nav button {
+   background-color: black;
+   color: white;
+   border: none;
+   border-radius: 15px;
+}
+
+
+nav button {
+    transition: all 0.3s ease-in-out;
+}
+
+nav button:hover {
+    background-color: rgb(68, 145, 184);
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.nav-below {
+    display: flex;
+    gap: 50px; 
+}
+
+
+.planet-card button { 
+    background-color: rgb(161, 78, 161);
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.planet-card button {
+    transition: all 0.3s ease-in-out;
+}
+
+.planet-card button:hover {
+    background-color: rgb(68, 145, 184);
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+button:focus {
+    outline: 3px solid yellow; 
+    outline-offset: 3px;
+}
+
+
+
+@media (max-width: 400px) {
+    .planets {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .planets {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .nav {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+}
+
+
+.stripe {
+    position: relative;
+}
+
+.stripe::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 10px;
+    right: 0;
+    background: rgb(100, 178, 204);
+    z-index: -1;
+}
+
+.wrapper {
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.milky-way {
+    width: 100%;
+    display: block;
+    animation: zoom 8s infinite ease-in-out alternate;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+/* Overlay Text */
+.text {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: white;
+    z-index: 5;
+}
+
+.text > h2 {
+    margin: 0;
+}
+
+.colorShift {
+    background: linear-gradient(90deg, blue, rgb(0, 255, 255));
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: textScroll 3s infinite alternate;
+}
+
+@keyframes textScroll {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
